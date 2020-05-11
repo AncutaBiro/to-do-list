@@ -1,7 +1,6 @@
 package org.fasttrackit;
 
-import org.fasttrackit.domain.Task;
-import org.fasttrackit.persistance.TaskRepository;
+import org.fasttrackit.persistence.TaskRepository;
 import org.fasttrackit.transfer.CreateTaskRequest;
 
 import java.io.IOException;
@@ -15,7 +14,7 @@ import java.time.LocalDate;
 
 public class App 
 {
-    public static void main( String[] args ) throws IOException, SQLException {
+    public static void main( String[] args ) throws IOException, SQLException, ClassNotFoundException {
 
         CreateTaskRequest request =  new CreateTaskRequest();
         request.setDescription("Learn JDBC");

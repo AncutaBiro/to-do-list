@@ -1,4 +1,4 @@
-package org.fasttrackit.persistance;
+package org.fasttrackit.persistence;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class DataBaseConfiguration {
 
-public static Connection getConnection () throws SQLException, IOException {
+public static Connection getConnection () throws SQLException, IOException, ClassNotFoundException {
 
     InputStream inputStream = DataBaseConfiguration.class.getClassLoader().getResourceAsStream("db.properties");
 
@@ -20,6 +20,8 @@ public static Connection getConnection () throws SQLException, IOException {
     try {
         Properties properties = new Properties();
         properties.load(inputStream);
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
         return DriverManager.getConnection(
                 properties.getProperty("url"),

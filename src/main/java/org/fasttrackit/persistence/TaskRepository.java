@@ -1,6 +1,5 @@
-package org.fasttrackit.persistance;
+package org.fasttrackit.persistence;
 
-import com.sun.org.apache.bcel.internal.generic.ArrayElementValueGen;
 import org.fasttrackit.transfer.CreateTaskRequest;
 
 import java.io.IOException;
@@ -11,7 +10,7 @@ import java.sql.SQLException;
 
 public class TaskRepository {
 
-    public void createTask(CreateTaskRequest request) throws IOException, SQLException {
+    public void createTask(CreateTaskRequest request) throws IOException, SQLException, ClassNotFoundException {
 // preventing SQL injection by using PreparedStatement
         String sql = "INSERT INTO task (description, deadline) VALUES (?,?)";
 
