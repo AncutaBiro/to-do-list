@@ -19,7 +19,7 @@ public class TaskService {
     }
 
     public void updateTask (long id, UpdateTaskRequest request) throws SQLException, IOException, ClassNotFoundException {
-        System.out.println("Updating task: " + id + ":" + request);
+        System.out.println("Updating task " + id + ":" + request);
         taskRepository.updateTask(id, request);
     }
 
@@ -28,9 +28,9 @@ public class TaskService {
         taskRepository.deleteTask(id);
     }
 
-//    public List<Task> getTasks() {
-//        System.out.println();
-//        return tasks;
-//    }
+    public List<Task> getTasks() throws SQLException, IOException, ClassNotFoundException {
+        System.out.println("Retrieving tasks: ");
+        return taskRepository.getTasks();
+    }
 
 }
