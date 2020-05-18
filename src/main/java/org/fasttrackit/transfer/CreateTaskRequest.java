@@ -2,6 +2,7 @@ package org.fasttrackit.transfer;
 
 import java.time.LocalDate;
 
+//   POJOs class with properties, getter-setter, ToString
 //DTO - Data Transfer Object
 public class CreateTaskRequest {
 
